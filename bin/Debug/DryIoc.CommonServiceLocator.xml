@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DryIoc.CommonServiceLocator</name>
+    </assembly>
+    <members>
+        <member name="T:DryIoc.CommonServiceLocator.DryIocServiceLocator">
+            <summary>
+            Implementation of CommonServiceLocator for DryIoc container, 
+            see rationale at https://commonservicelocator.codeplex.com/
+            </summary>
+        </member>
+        <member name="F:DryIoc.CommonServiceLocator.DryIocServiceLocator.Container">
+            <summary>Exposes underlying Container for direct operation.</summary>
+        </member>
+        <member name="M:DryIoc.CommonServiceLocator.DryIocServiceLocator.#ctor(DryIoc.IContainer)">
+            <summary>Creates new locator as adapter for provided container.</summary>
+            <param name="container">Container to use/adapt.</param>
+        </member>
+        <member name="M:DryIoc.CommonServiceLocator.DryIocServiceLocator.DoGetInstance(System.Type,System.String)">
+            <summary>Resolves service from container. Throws if unable to resolve.</summary>
+            <param name="serviceType">Service type to resolve.</param>
+            <param name="key">(optional) Service key to resolve.</param>
+            <returns>Resolved service object.</returns>
+        </member>
+        <member name="M:DryIoc.CommonServiceLocator.DryIocServiceLocator.DoGetAllInstances(System.Type)">
+            <summary>Returns enumerable which when enumerated! resolves all default and named 
+            implementations/registrations of requested service type. 
+            If no services resolved when enumerable accessed, no exception is thrown - enumerable is empty.</summary>
+            <param name="serviceType">Service type to resolve.</param>
+            <returns>Returns enumerable which will return resolved service objects.</returns>
+        </member>
+    </members>
+</doc>
